@@ -49,3 +49,11 @@
 .heading-container>button:hover{
     background-color: rgb(189, 3, 3);
 }
+
+a{
+    color: white;
+    text-decoration: none;
+}
+a>button:hover{
+    cursor: pointer;
+}

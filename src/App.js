@@ -1,9 +1,6 @@
 import "./App.css";
 import { useRoutes } from "react-router-dom";
-import { LoginPage, PanelPage, ProtectedRoute } from "./components";
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { setUser } from "./redux/slices/UserSlice";
+import { LoginPage, PanelPage, ProtectedRoute, Suspended } from "./components";
 
 function App() {
   const routes = useRoutes([
@@ -16,6 +13,14 @@ function App() {
       element: (
         <ProtectedRoute>
           <PanelPage />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/suspended",
+      element: (
+        <ProtectedRoute>
+          <Suspended />
         </ProtectedRoute>
       ),
     },

@@ -1,0 +1,22 @@
+/* .user-card {
+    display: flex;
+    flex-direction: column;
+    height: 15em;
+    width: 10em;
+    border: 1px solid gray;
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+h5 {
+    margin: 0;
+    padding: 0;
+}
+
+.user-card > img {
+    height: 90%;
+    width: 100%;
+    margin: 1em 0 1em 0;
+} */
+

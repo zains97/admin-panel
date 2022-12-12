@@ -2,10 +2,10 @@ import React from "react";
 import { useState } from "react";
 import "./login.css";
 import connectLogo from "../../assets/ConnectLogo.png";
-import { login } from "../../api/User";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../redux/slices/UserSlice";
 import { useNavigate } from "react-router-dom";
+import { login } from "../../api/User";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");

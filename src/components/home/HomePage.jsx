@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { getUserCount } from "../../api/User";
 import { useState } from "react";
 import { getAllReportedPosts } from "../../api/ReportedPosts";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const [userCount, setUserCount] = useState();
@@ -49,6 +49,7 @@ const HomePage = () => {
         <p>{user?.firstName + " " + user?.lastName}</p>
         <img src={user?.profilePic} alt="profile pic" />
         <p>Total Users: {userCount}</p>
+        <div></div>
       </div>
       <div className="home-main-content">
         <div className="heading-container">

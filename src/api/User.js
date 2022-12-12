@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const hostUrl = `http://192.168.0.107:5000/api`;
-
+// const hostUrl = `http://192.168.0.106:5000/api`;
+const hostUrl = "https://connect-fyp-zain.herokuapp.com/api";
 export const getUserCount = async () => {
   try {
     let { data } = await axios.get(`${hostUrl}/user/count`);
@@ -29,5 +29,25 @@ export const login = async (email, password) => {
   } catch (error) {
     console.log(error);
     return { message: error.message };
+  }
+};
+
+export const getSuspendedUsers = async () => {
+  try {
+    let { data } = await axios.get(`${hostUrl}/user/get-all-suspended`);
+    return data;
+  } catch (e) {
+    return { success: false };
+  }
+};
+
+export const suspendUser = async (userId) => {
+  try {
+    let { data } = await axios.patch(`${hostUrl}/user/suspend-user`, {
+      userId,
+    });
+    return data;
+  } catch (error) {
+    return { success: false };
   }
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { deletePost, dismissReport } from "../../../api/ReportedPosts";
+import { suspendUser } from "../../../api/User";
 import { getUser } from "../../../api/User";
 import "./post.css";
 
@@ -33,14 +34,30 @@ const PostComponent = ({ post }) => {
         <button
           type="button"
           onClick={() => {
-            deletePost(post);
+            deletePost(post)
+              .then(() => {
+                alert("post deleted");
+              })
+              .catch(() => {
+                alert("Failed to deleted post");
+              });
           }}
         >
           Delete
         </button>
         <button
           onClick={() => {
-            console.log("suspend");
+            suspendUser(post.post.creator)
+              .then((res) => {
+                if (res.success == true) {
+                  alert("Suspended user");
+                } else {
+                  alert("Failed to suspend user");
+                }
+              })
+              .catch(() => {
+                alert("Failed to suspend user!");
+              });
           }}
           type="button"
         >

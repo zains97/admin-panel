@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const hostUrl = `http://192.168.0.107:5000`;
+// const hostUrl = `http://192.168.0.106:5000`;
+const hostUrl = "https://connect-fyp-zain.herokuapp.com";
 
 export const getAllReportedPosts = async () => {
   try {
